@@ -1,4 +1,4 @@
-const handleSignin = (req, res, db, bcrypt) => {
+const signinHandler = (req, res, db, bcrypt) => {
 	const { email, password } = req.body;
 	if(!email || !password) {
 		return res.status(400).json('Incorrect form submission');
@@ -25,6 +25,4 @@ const handleSignin = (req, res, db, bcrypt) => {
 	})
 }
 
-module.exports = {
-	handleSignin: handleSignin
-}
+export default signinHandler;

@@ -2,11 +2,12 @@
   "name": "smart-brain-api",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "start:dev": "nodemon server.js"
   },
+  "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -16,6 +17,7 @@
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "knex": "^3.1.0",
+    "node-fetch": "^3.3.2",
     "nodemon": "^3.1.0",
     "pg": "^8.11.5"
   }
