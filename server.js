@@ -1,13 +1,18 @@
 import express from 'express';
 import bcrypt from 'bcrypt-nodejs';
 import cors from 'cors';
-import db from 'knex';
+import knex from 'knex';
 
-db({
+const db = knex({
   client: 'pg',
   connection: {
     connectionString: process.env.DATABASE_URL,
-    ssl: true
+    ssl: { rejectUnauthorized: false },
+    host: process.env.DATABASE_HOST,
+    port: 5432,
+    user: process.env.DATABASE_USER,
+    password: process.env.DATABASE_PASSWORD,
+    database: process.env.DATABASE_DB
   },
 });
 
